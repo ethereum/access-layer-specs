@@ -6,10 +6,12 @@ Each spec is a `README.md` inside its own numbered folder, and begins with a YAM
 ---
 id: 6
 title: Private Read Protocol
+shortname: PRIVATE-READ
 role: hosted
 type: protocol
 status: draft
 domains: [read]
+tags: [read, privacy]
 editor: Name <email>
 contributors:
   - Name <email>
@@ -26,10 +28,12 @@ upstream: null
 |---|---|---|
 | `id` | yes | The spec's number. Assigned on merge, never reused, never changed |
 | `title` | yes | Plain name, no number in it |
+| `shortname` | no | Upper-case short handle, used in the `N/SHORTNAME` form other specs cite |
 | `role` | yes | `hosted`, `mirrored` or `indexed` |
 | `type` | yes | `protocol`, `interface`, `profile`, `schema` or `process` |
 | `status` | yes | See [lifecycle.md](lifecycle.md) |
 | `domains` | no | Any of `read`, `write`, `prove`, `delegate`, `exit` |
+| `tags` | no | Free-form keywords for search. Carries no process meaning |
 | `editor` | yes | The person accountable for the text |
 | `contributors` | no | Everyone else who wrote part of it |
 | `depends_on` | no | Spec ids this one cannot be understood or used without |
@@ -64,6 +68,10 @@ New values get added when the first spec of a new kind arrives, not in advance. 
 Optional tags naming which Access Layer verbs a spec serves. A spec usually serves more than one, and that is expected rather than a problem to resolve. Semaphore, for example, is `[read, write, prove]`, because it covers adding an identity to a group, reading a leaf position, and proving membership.
 
 The tags exist to group specs and to help find the right reviewer. They do not affect where a spec is filed, because every spec lives in the same flat numbered list.
+
+## shortname
+
+Specs in this repository have long been cited in the form `1/COSS` and `3/SEMAPHORE-V4`, and several spec bodies already reference each other that way. `shortname` keeps that handle available and makes the folder slug derivable from it. It is optional, and a spec without one is cited by number and title.
 
 ## Versioning
 

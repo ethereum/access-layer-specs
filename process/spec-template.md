@@ -8,10 +8,12 @@ Delete any section that genuinely does not apply, and say why in the pull reques
 ---
 id: 0000
 title: Your Spec Name
+shortname: YOUR-SPEC
 role: hosted
 type: protocol
 status: draft
 domains: []
+tags: []
 editor: Your Name <you@example.com>
 contributors: []
 depends_on: []
