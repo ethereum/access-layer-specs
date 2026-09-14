@@ -20,6 +20,7 @@ depends_on: []
 replaces: []
 replaced_by: null
 upstream: null
+# index_reason: only when role is indexed and no hosted spec depends on it
 ---
 
 # Your Spec Name

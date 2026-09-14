@@ -35,4 +35,4 @@ This is the gate W3C and IETF both use. It is the difference between a document 
 
 Anyone can propose a status change in a pull request. Promotion to `review` and `stable` needs a reviewer's approval, the rest are editorial.
 
-A spec that moves out to another standards body keeps its folder and number. Its `role` flips to `indexed`, its `upstream` points at the new canonical text, and the old content stays in place so that existing links and `depends_on` references keep resolving.
+A spec that moves out to another standards body keeps its folder and number. Its `role` flips to `indexed`, its `upstream` points at the new canonical text, and it gains an `index_reason` recording the move. The old content stays in place so that existing links and `depends_on` references keep resolving, which is why a graduated spec is the one kind of indexed entry that is not a stub.

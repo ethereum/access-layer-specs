@@ -38,7 +38,8 @@ upstream: null
 | `contributors` | no | Everyone else who wrote part of it |
 | `depends_on` | no | Spec ids this one cannot be understood or used without |
 | `replaces` | no | Spec ids this one supersedes |
-| `replaced_by` | no | The spec id or external standard that supersedes this one |
+| `replaced_by` | no | What supersedes this spec. See below for the accepted forms |
+| `index_reason` | when `role` is `indexed` and nothing depends on it | One line on why this entry exists |
 | `upstream` | when `role` is `mirrored` or `indexed` | URL of the canonical text |
 
 ## role
@@ -47,9 +48,14 @@ Where the canonical text lives, and what this repository promises about it.
 
 - `hosted`, the text lives here and this repository is its source of truth.
 - `mirrored`, a full copy is kept here while an upstream stays authoritative. Used for fragile upstreams such as shared notes and papers, and for frozen audit snapshots.
-- `indexed`, only a stub with a link. The spec is read upstream.
+- `indexed`, the spec is read upstream. Usually a short stub with a link and a sentence of context. A spec that graduated out of this repository is the exception, it keeps its full text so that old links still resolve.
 
-An external standard gets an indexed entry only when a hosted spec names it in `depends_on`. Anything merely worth mentioning stays an ordinary hyperlink in a spec's prose. Without that rule the repository slowly becomes a catalogue of every interesting spec in the world.
+An indexed entry has to earn its place, or the repository slowly becomes a catalogue of every interesting spec in the world. It earns it in one of two ways.
+
+- A hosted spec names it in `depends_on`, which is the usual case for an external standard.
+- It carries `index_reason`, one line saying why it is here. A spec that graduated to another body writes `index_reason: graduated to ERC-9999`.
+
+Anything merely worth mentioning stays an ordinary hyperlink in a spec's prose.
 
 ## type
 
@@ -72,6 +78,18 @@ The tags exist to group specs and to help find the right reviewer. They do not a
 ## shortname
 
 Specs in this repository have long been cited in the form `1/COSS` and `3/SEMAPHORE-V4`, and several spec bodies already reference each other that way. `shortname` keeps that handle available and makes the folder slug derivable from it. It is optional, and a spec without one is cited by number and title.
+
+## replaced_by
+
+Three forms are accepted, and the validator treats each differently.
+
+| Form | Example | Checked |
+|---|---|---|
+| A spec number | `4` | yes, the spec must exist here |
+| An external identifier | `ERC-9999` | no, it is outside this repository |
+| A path in this repository | `process/` | no, but it must resolve |
+
+`replaces` points the other way and only takes spec numbers.
 
 ## Versioning
 
