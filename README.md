@@ -10,13 +10,13 @@ Start with [process/](process/README.md) to see how the repository works and whe
 
 ## Specifications
 
-| # | Name | Status | Description |
-|---|------|--------|-------------|
-| 1 | [1/COSS](specs/1/README.md) | draft | Specification framework and editorial process |
-| 2 | [2/ANON-AADHAAR-V2](specs/2/README.md) | draft | Privacy-preserving verification of Aadhaar identity cards using ZK proofs |
-| 3 | [3/SEMAPHORE-V4](specs/3/README.md) | draft | Anonymous group membership and signaling protocol |
-| 4 | [4/EXCUBIAE](specs/4/README.md) | draft | Composable attribute-based access control framework for EVM |
-| 5 | [5/ZK-PROOF-OF-PERSONHOOD](specs/5/README.md) | raw | ZK-based proof of personhood for online forums |
+| # | Name | Type | Status | Domains | Description |
+|---|------|------|--------|---------|-------------|
+| 1 | [1/COSS](specs/1-coss/README.md) | process | living | — | Specification framework and editorial process |
+| 2 | [2/ANON-AADHAAR-V2](specs/2-anon-aadhaar-v2/README.md) | protocol | draft | prove | Privacy-preserving verification of Aadhaar identity cards using ZK proofs |
+| 3 | [3/SEMAPHORE-V4](specs/3-semaphore-v4/README.md) | protocol | draft | read, write, prove | Anonymous group membership and signaling protocol |
+| 4 | [4/EXCUBIAE](specs/4-excubiae/README.md) | interface | draft | prove, delegate | Composable attribute-based access control framework for EVM |
+| 5 | [5/ZK-PROOF-OF-PERSONHOOD](specs/5-zk-proof-of-personhood/README.md) | protocol | idea | prove | ZK-based proof of personhood for online forums, text currently in zkID |
 
 ## Why these live in their own repository
 
@@ -35,7 +35,7 @@ Spec and spec-like work that currently lives elsewhere and may move here over ti
 
 | Area | Work | Location | Context here | Notes |
 |------|------|----------|--------------|-------|
-| Personhood | ZK Proof of Personhood | [`privacy-ethereum/zkID/specs/2-zk-proof-of-personhood`](https://github.com/privacy-ethereum/zkID/blob/main/specs/2-zk-proof-of-personhood/README.md) | Mirrored as [`5/ZK-PROOF-OF-PERSONHOOD`](specs/5/README.md) | Adjacent Access Layer spec work |
+| Personhood | ZK Proof of Personhood | [`privacy-ethereum/zkID/specs/2-zk-proof-of-personhood`](https://github.com/privacy-ethereum/zkID/blob/main/specs/2-zk-proof-of-personhood/README.md) | Mirrored as [`5/ZK-PROOF-OF-PERSONHOOD`](specs/5-zk-proof-of-personhood/README.md) | Adjacent Access Layer spec work |
 | Credentials | OpenAC Core | [`privacy-ethereum/zkID/specs/1-openac`](https://github.com/privacy-ethereum/zkID/blob/main/specs/1-openac/README.md) | Drafted in [#21](https://github.com/ethereum/access-layer-specs/pull/21) and [#23](https://github.com/ethereum/access-layer-specs/pull/23) | Protocol material alongside implementation work |
 | Age verification | ZK Age Verification | [`privacy-ethereum/zkID/specs/3-zk-age-verification`](https://github.com/privacy-ethereum/zkID/blob/main/specs/3-zk-age-verification/README.md) | Drafted as `6/ZK-AGE-ELIGIBILITY` in [#19](https://github.com/ethereum/access-layer-specs/pull/19) | Adjacent Access Layer spec work |
 
