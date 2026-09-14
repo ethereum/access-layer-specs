@@ -2,6 +2,7 @@
 id: 1
 title: Consensus-Oriented Specification System
 shortname: COSS
+description: Specification framework and editorial process
 role: hosted
 type: process
 status: living

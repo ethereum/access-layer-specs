@@ -2,6 +2,7 @@
 id: 2
 title: Anonymous Aadhaar Verification Protocol
 shortname: ANON-AADHAAR-V2
+description: Privacy-preserving verification of Aadhaar identity cards using ZK proofs
 role: hosted
 type: protocol
 status: draft
