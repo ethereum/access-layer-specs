@@ -16,6 +16,7 @@ depends_on: []
 replaces: []
 replaced_by: null
 upstream: https://github.com/ethereum/zkID/blob/main/specs/2-zk-proof-of-personhood/README.md
+index_basis: formerly-hosted
 index_reason: Written here in March 2026, imported into zkID in May, local copy removed in #24. Bringing it back is tracked separately.
 ---
 
