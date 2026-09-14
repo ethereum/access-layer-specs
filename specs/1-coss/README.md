@@ -1,9 +1,12 @@
 ---
-slug: 1
-title: 1/COSS
-name: Consensus-Oriented Specification System
-status: draft
-category: Best Current Practice
+id: 1
+title: Consensus-Oriented Specification System
+shortname: COSS
+role: hosted
+type: process
+status: living
+domains: []
+tags: [process, editorial]
 editor: Oskar Thoren <oskarth@titanproxy.com>
 contributors:
   - Pieter Hintjens <ph@imatix.com>
@@ -12,6 +15,10 @@ contributors:
   - Chris Puttick <chris.puttick@thehumanjourney.net>
   - Yurii Rashkovskii <yrashk@gmail.com>
   - Daniel Kaiser <danielkaiser@status.im>
+depends_on: []
+replaces: []
+replaced_by: null
+upstream: null
 ---
 
 This document describes a consensus-oriented specification system (COSS) for building interoperable technical specifications.
@@ -45,7 +52,7 @@ if not, see http://www.gnu.org/licenses.
 
 ## Change Process
 
-This document is governed by the [1/COSS](spec/1) (COSS).
+This document is governed by the [1/COSS](../1-coss) (COSS).
 
 ## Language
 

@@ -1,27 +1,28 @@
 ---
-slug: 3
-title: 3/SEMAPHORE-V4
-name: Semaphore Protocol V4
+id: 3
+title: Semaphore Protocol V4
+shortname: SEMAPHORE-V4
+role: hosted
+type: protocol
 status: draft
-category: Standards Track
-tags: zero-knowledge, identity, privacy, anonymity, proof of membership, groups
+domains: [read, write, prove]
+tags: [zero-knowledge, identity, privacy, anonymity, proof of membership, groups]
 editor: Vivian Plasencia <vivianpc@pse.dev>
 contributors:
   - Andy <andy@pse.dev>
   - Cedoor <me@cedoor.dev>
   - Oskar Thoren <oskarth@titanproxy.com>
-  - tags:
-      - zero-knowledge
-      - identity
-      - groups
-      - privacy
+depends_on: [1]
+replaces: []
+replaced_by: null
+upstream: null
 ---
 
 # Semaphore V4 Specification
 
 # Change Process
 
-This document is governed by the [1/COSS](https://github.com/zkspecs/zkspecs/tree/main/specs/1) (COSS).
+This document is governed by the [1/COSS](../1-coss) (COSS).
 
 # Language
 

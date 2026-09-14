@@ -1,26 +1,25 @@
 ---
-
-slug: CS-04
-title: CS-04/EXCUBIAE
-name: Excubiae Smart Contract Framework
+id: 4
+title: Excubiae Smart Contract Framework
+shortname: EXCUBIAE
+role: hosted
+type: interface
 status: draft
-category: Standards Track
+domains: [prove, delegate]
+tags: [smart contract, gatekeeper, framework, composable, policy, checker]
 editor: Giacomo Corrias (0xjei) <0xjei@pse.dev>
-contributors: 
-- ...
-- tags:
-   - smart contract
-   - gatekeeper
-   - framework
-   - composable
-   - policy
-   - checker
-
+contributors: []
+depends_on: [1]
+replaces: []
+replaced_by: null
+upstream: null
 ---
+
+# Excubiae Smart Contract Framework
 
 # Change Process
 
-This document is governed by the [1/COSS](../1) (COSS).
+This document is governed by the [1/COSS](../1-coss) (COSS).
 
 # Language
 

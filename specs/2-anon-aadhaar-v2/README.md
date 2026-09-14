@@ -1,26 +1,27 @@
-## Anon-Aadhaar spec raw
-
 ---
-
-slug: CS-02
-title: CS-02/ANON-AADHAAR-V2
-name: Anonymous Aadhaar Verification Protocol
+id: 2
+title: Anonymous Aadhaar Verification Protocol
+shortname: ANON-AADHAAR-V2
+role: hosted
+type: protocol
 status: draft
-category: Standards Track
+domains: [prove]
+tags: [zero-knowledge, identity, privacy]
 editor: Yanis Meziane <yanis@pse.dev>
 contributors:
-
-- Saleel P <saleel@saleel.xyz>, Oskar Thoren <oskarth@titanproxy.com>
-- tags:
-  - zero-knowledge
-  - identity
-  - privacy
-
+  - Saleel P <saleel@saleel.xyz>
+  - Oskar Thoren <oskarth@titanproxy.com>
+depends_on: [1]
+replaces: []
+replaced_by: null
+upstream: null
 ---
+
+# Anonymous Aadhaar Verification Protocol
 
 # Change Process
 
-This document is governed by the [1/COSS](../1) (COSS).
+This document is governed by the [1/COSS](../1-coss) (COSS).
 
 # Language
 
