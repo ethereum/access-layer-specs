@@ -16,7 +16,7 @@ Start with [process/](process/README.md) to see how the repository works and whe
 | 2 | [2/ANON-AADHAAR-V2](specs/2-anon-aadhaar-v2/README.md) | protocol | draft | prove | Privacy-preserving verification of Aadhaar identity cards using ZK proofs |
 | 3 | [3/SEMAPHORE-V4](specs/3-semaphore-v4/README.md) | protocol | draft | read, write, prove | Anonymous group membership and signaling protocol |
 | 4 | [4/EXCUBIAE](specs/4-excubiae/README.md) | interface | draft | prove, delegate | Composable attribute-based access control framework for EVM |
-| 5 | [5/ZK-PROOF-OF-PERSONHOOD](specs/5-zk-proof-of-personhood/README.md) | protocol | idea | prove | ZK-based proof of personhood for online forums, mirrored from zkID |
+| 5 | [5/ZK-PROOF-OF-PERSONHOOD](specs/5-zk-proof-of-personhood/README.md) | protocol | idea | prove | ZK-based proof of personhood for online forums, text currently in zkID |
 
 ## Why these live in their own repository
 
