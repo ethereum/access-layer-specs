@@ -7,6 +7,7 @@ Each spec is a `README.md` inside its own numbered folder, and begins with a YAM
 id: 6
 title: Private Read Protocol
 shortname: PRIVATE-READ
+description: Private reads from Ethereum without revealing what was read
 role: hosted
 type: protocol
 status: draft
@@ -29,6 +30,7 @@ upstream: null
 | `id` | yes | The spec's number. Assigned on merge, never reused, never changed |
 | `title` | yes | Plain name, no number in it |
 | `shortname` | no | Upper-case short handle, used in the `N/SHORTNAME` form other specs cite |
+| `description` | no | One line for the index table. Falls back to `title` when absent |
 | `role` | yes | `hosted`, `mirrored` or `indexed` |
 | `type` | yes | `protocol`, `interface`, `profile`, `schema` or `process` |
 | `status` | yes | See [lifecycle.md](lifecycle.md) |

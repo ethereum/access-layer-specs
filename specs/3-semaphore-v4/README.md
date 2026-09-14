@@ -2,6 +2,7 @@
 id: 3
 title: Semaphore Protocol V4
 shortname: SEMAPHORE-V4
+description: Anonymous group membership and signaling protocol
 role: hosted
 type: protocol
 status: draft

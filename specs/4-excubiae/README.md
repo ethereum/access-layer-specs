@@ -2,6 +2,7 @@
 id: 4
 title: Excubiae Smart Contract Framework
 shortname: EXCUBIAE
+description: Composable attribute-based access control framework for EVM
 role: hosted
 type: interface
 status: draft

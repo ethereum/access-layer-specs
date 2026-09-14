@@ -2,6 +2,7 @@
 id: 5
 title: ZK-based Proof of Personhood for Online Forums
 shortname: ZK-PROOF-OF-PERSONHOOD
+description: ZK-based proof of personhood for online forums, text currently in zkID
 role: indexed
 type: protocol
 status: idea
