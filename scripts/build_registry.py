@@ -45,6 +45,11 @@ def load_specs():
         if not os.path.isfile(path):
             continue
 
+        # A bare number is a legacy path kept as a pointer to the renamed
+        # folder, so links made before the rename keep working. Not a spec.
+        if re.fullmatch(r"\d+", folder):
+            continue
+
         match = re.match(r"^(\d+)-([a-z0-9-]+)$", folder)
         if not match:
             errors.append(f"{folder}: folder must be named number-slug, all lower case")
@@ -96,15 +101,34 @@ def load_specs():
                 if ref not in known:
                     errors.append(f"{spec['folder']}: {field} names spec {ref}, which does not exist")
 
-    # An indexed entry earns its place only when a hosted spec depends on it.
-    # Without this the repo slowly becomes a catalogue of every spec in the world.
+        # replaced_by takes a spec number, an external identifier such as
+        # ERC-9999, or a path in this repo. Only a number is checkable here.
+        target = spec.get("replaced_by")
+        if isinstance(target, bool):
+            errors.append(f"{spec['folder']}: replaced_by must be a spec number, an external id, or a path")
+        elif isinstance(target, int) and target not in known:
+            errors.append(f"{spec['folder']}: replaced_by names spec {target}, which does not exist")
+        elif isinstance(target, str) and target.strip().isdigit() and int(target) not in known:
+            errors.append(f"{spec['folder']}: replaced_by names spec {target}, which does not exist")
+
+    # An indexed entry earns its place either because a hosted spec depends on
+    # it, or because it says why it is here. Some such rule is needed or the
+    # repo becomes a catalogue of every spec in the world. Requiring a
+    # dependant alone would block graduation, since a spec nothing depends on
+    # could never flip to indexed on its way out to another body.
     depended_on = {ref for s in specs if s.get("role") == "hosted"
                    for ref in s.get("depends_on") or []}
     for spec in specs:
-        if spec.get("role") == "indexed" and spec["id"] not in depended_on:
-            errors.append(
-                f"{spec['folder']}: indexed entries need a hosted spec naming them in "
-                f"depends_on, see process/front-matter.md")
+        if spec.get("role") != "indexed":
+            continue
+        if spec["id"] in depended_on:
+            continue
+        if str(spec.get("index_reason") or "").strip():
+            continue
+        errors.append(
+            f"{spec['folder']}: an indexed entry needs a hosted spec naming it in "
+            f"depends_on, or an index_reason saying why it is here, "
+            f"see process/front-matter.md")
 
     return sorted(specs, key=lambda s: s["id"]), errors
 
@@ -121,7 +145,8 @@ def render_registry(specs):
             "status": spec["status"],
         }
         for field in ("shortname", "domains", "tags", "editor",
-                      "depends_on", "replaces", "replaced_by", "upstream"):
+                      "depends_on", "replaces", "replaced_by", "upstream",
+                      "index_reason"):
             if spec.get(field):
                 entry[field] = spec[field]
         entries.append(entry)
