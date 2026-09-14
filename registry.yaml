@@ -72,9 +72,9 @@ specs:
 - id: 5
   title: ZK-based Proof of Personhood for Online Forums
   path: specs/5-zk-proof-of-personhood/README.md
-  role: indexed
+  role: hosted
   type: protocol
-  status: idea
+  status: draft
   shortname: ZK-PROOF-OF-PERSONHOOD
   domains:
   - prove
@@ -85,6 +85,3 @@ specs:
   - anonymous-credentials
   - proof-of-personhood
   editor: Nicole <nicole@ethereum.org>
-  upstream: https://github.com/ethereum/zkID/blob/main/specs/2-zk-proof-of-personhood/README.md
-  index_basis: formerly-hosted
-  index_reason: Written here in March 2026, imported into zkID in May, local copy removed in
