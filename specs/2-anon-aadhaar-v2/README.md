@@ -22,7 +22,7 @@ upstream: null
 
 # Change Process
 
-This document is governed by the [1/COSS](../1-coss) (COSS).
+This document is governed by the process in [`process/`](../../process/README.md), which superseded [1/COSS](../1-coss).
 
 # Language
 
