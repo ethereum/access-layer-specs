@@ -2,9 +2,9 @@
 
 Specifications for the Access Layer, meaning the paths through which people and their agents read from Ethereum, write to it, prove things about themselves, delegate authority, and exit when a provider fails.
 
-> **Rename pending.** This repository is still called `zkspecs`. The rename to `access-layer-specs`, and the scope it reflects, are proposed in [#29](https://github.com/ethereum/zkspecs/issues/29).
-
 The repository defines rules, interfaces, profiles, lifecycle status, and where each spec originally comes from. It does not list tools or implementations. It does not compete with [EIPs and ERCs](https://eips.ethereum.org), [W3C specs](https://www.w3.org/TR/) or the [Tor protocol specs](https://spec.torproject.org/), it links to them, depends on them, or defines Access Layer profiles on top of them.
+
+Renamed from `zkspecs` on 14 September 2026, following [#29](https://github.com/ethereum/access-layer-specs/issues/29). Old links redirect.
 
 Start with [process/](process/README.md) to see how the repository works and where a new spec should go.
 
@@ -36,8 +36,8 @@ Spec and spec-like work that currently lives elsewhere and may move here over ti
 | Area | Work | Location | Context here | Notes |
 |------|------|----------|--------------|-------|
 | Personhood | ZK Proof of Personhood | [`privacy-ethereum/zkID/specs/2-zk-proof-of-personhood`](https://github.com/privacy-ethereum/zkID/blob/main/specs/2-zk-proof-of-personhood/README.md) | Mirrored as [`5/ZK-PROOF-OF-PERSONHOOD`](specs/5/README.md) | Adjacent Access Layer spec work |
-| Credentials | OpenAC Core | [`privacy-ethereum/zkID/specs/1-openac`](https://github.com/privacy-ethereum/zkID/blob/main/specs/1-openac/README.md) | Drafted in [#21](https://github.com/ethereum/zkspecs/pull/21) and [#23](https://github.com/ethereum/zkspecs/pull/23) | Protocol material alongside implementation work |
-| Age verification | ZK Age Verification | [`privacy-ethereum/zkID/specs/3-zk-age-verification`](https://github.com/privacy-ethereum/zkID/blob/main/specs/3-zk-age-verification/README.md) | Drafted as `6/ZK-AGE-ELIGIBILITY` in [#19](https://github.com/ethereum/zkspecs/pull/19) | Adjacent Access Layer spec work |
+| Credentials | OpenAC Core | [`privacy-ethereum/zkID/specs/1-openac`](https://github.com/privacy-ethereum/zkID/blob/main/specs/1-openac/README.md) | Drafted in [#21](https://github.com/ethereum/access-layer-specs/pull/21) and [#23](https://github.com/ethereum/access-layer-specs/pull/23) | Protocol material alongside implementation work |
+| Age verification | ZK Age Verification | [`privacy-ethereum/zkID/specs/3-zk-age-verification`](https://github.com/privacy-ethereum/zkID/blob/main/specs/3-zk-age-verification/README.md) | Drafted as `6/ZK-AGE-ELIGIBILITY` in [#19](https://github.com/ethereum/access-layer-specs/pull/19) | Adjacent Access Layer spec work |
 
 ## Contributing
 
