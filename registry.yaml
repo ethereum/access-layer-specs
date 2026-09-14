@@ -6,12 +6,13 @@ specs:
   path: specs/1-coss/README.md
   role: hosted
   type: process
-  status: living
+  status: deprecated
   shortname: COSS
   tags:
   - process
   - editorial
   editor: Oskar Thoren <oskarth@titanproxy.com>
+  replaced_by: process/
 - id: 2
   title: Anonymous Aadhaar Verification Protocol
   path: specs/2-anon-aadhaar-v2/README.md

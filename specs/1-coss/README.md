@@ -2,10 +2,10 @@
 id: 1
 title: Consensus-Oriented Specification System
 shortname: COSS
-description: Specification framework and editorial process
+description: Specification framework and editorial process, superseded by process/
 role: hosted
 type: process
-status: living
+status: deprecated
 domains: []
 tags: [process, editorial]
 editor: Oskar Thoren <oskarth@titanproxy.com>
@@ -18,9 +18,18 @@ contributors:
   - Daniel Kaiser <danielkaiser@status.im>
 depends_on: []
 replaces: []
-replaced_by: null
+replaced_by: process/
 upstream: null
 ---
+
+> **Superseded.** This repository's working rules now live in [`process/`](../../process/README.md).
+> COSS is kept here because specs 2, 3 and 4 were written under it and because it is part of the
+> repository's history. Read it for that, not as the current process.
+>
+> Where the two differ, `process/` wins. The differences are the lifecycle stages, the evidence
+> required to reach `stable`, and editorial control. Where they agree, on incremental numbering
+> and on a functional change getting a new number rather than editing the old one, `process/`
+> inherited the rule from here.
 
 This document describes a consensus-oriented specification system (COSS) for building interoperable technical specifications.
 COSS is based on a lightweight editorial process that seeks to engage the widest possible range of interested parties and move rapidly to consensus through working code.
