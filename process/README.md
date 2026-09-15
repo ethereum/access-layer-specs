@@ -8,7 +8,7 @@ How this repository works. These documents play the role EIP-1 plays for EIPs.
 | [front-matter.md](front-matter.md) | The metadata every spec carries, and the allowed values |
 | [intake.md](intake.md) | How a new spec gets proposed, numbered and merged |
 | [spec-template.md](spec-template.md) | The skeleton to copy when writing one |
-| [governance.md](governance.md) | Licensing, approval and dispute rules |
+| [governance.md](governance.md) | The CC0 licence, plus the approval and dispute rules still to settle |
 
 ## What belongs here
 

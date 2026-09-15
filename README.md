@@ -45,4 +45,4 @@ Read [process/intake.md](process/intake.md). New specs start as an issue, small 
 
 ## License
 
-[MIT](LICENSE). The licence for spec text is [an open question](process/governance.md).
+[CC0](LICENSE), the same as the EIP repository. Every spec ends with a copyright waiver, see [process/governance.md](process/governance.md).

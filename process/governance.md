@@ -1,30 +1,25 @@
 # Governance
 
-> **Status: open.** The licence choice below has not been made. It needs an answer from EF legal before the repository takes contributions at any volume, because a contributor agreement cannot be applied retroactively to text people have already written.
+## Licence
 
-Four things need to be written down before the repository grows. Retrofitting any of them after people have contributed is considerably harder than agreeing them now.
+Everything in this repository is placed in the public domain under [CC0](../LICENSE), the same arrangement the EIP and ERC repositories use. Every spec ends with the line
 
-## 1. Contributor agreement
+```
+Copyright and related rights waived via [CC0](../../LICENSE).
+```
 
-Everyone contributing spec text agrees up front that the project can use it, so that nobody can later claim rights over a spec that others have implemented.
+and that line is the whole contributor agreement. Whoever submits text gives up their rights to it in the same pull request, so there is nothing to sign and nothing to retrofit. It also means a spec that graduates into an ERC needs no relicensing, because the ERC process requires CC0 as well.
 
-## 2. Spec licence
+The repository carried MIT from its time as `zkspecs`. Specs 2 to 5 already ended with the CC0 waiver, so the switch changes the repository file to match the specs, not the other way round. Spec 1 is the one exception, it kept the GPL licence of the C4 process it was derived from.
 
-The repository currently carries [MIT](../LICENSE), inherited from its time as `zkspecs`. Two options are on the table.
+CC0 covers copyright only. It gives implementers no promise about patents, and the EIP process lives with the same gap.
 
-- A spec licence with patent commitments, where contributors promise not to sue anyone who implements a spec over patents covering it. An open-source licence alone does not give this, because copyright and patents are separate grants. This is what makes companies comfortable building on a spec.
-- Public domain via CC0, which is what the EIP process uses. It makes moving text into an ERC trivial, and it gives implementers no patent protection at all. The EIP process lives with that gap.
-
-Whichever is chosen, the licence must permit re-releasing a graduated spec's text as CC0, because the ERC process requires it.
-
-## 3. Approval rule
+## Approval rule
 
 What counts as consensus for merging a spec, and for promoting one to `review` or `stable`. See [intake.md](intake.md) for the current working rule, which needs ratifying rather than inventing.
 
-## 4. Tie-breaker
+## Tie-breaker
 
 A named person who decides when reviewers disagree, so that a dispute cannot freeze the repository indefinitely.
 
-## A ready-made option
-
-Rather than drafting all four from scratch, the Linux Foundation's [Community Specification template](https://github.com/CommunitySpecification/1.0) ships them as complete documents. SPDX runs on a modified version of it. Adopting it would settle pieces 1, 3 and 4 at once and make piece 2 the only real decision left.
+Both of these are still open and are tracked in [#29](https://github.com/ethereum/access-layer-specs/issues/29).

@@ -69,7 +69,7 @@ spec has test vectors.
 
 ## Copyright
 
-Released under the repository licence.
+Copyright and related rights waived via [CC0](../../LICENSE).
 ````
 
 ## Fixtures
