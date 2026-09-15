@@ -20,7 +20,7 @@ depends_on: []
 replaces: []
 replaced_by: null
 upstream: null
-# index_basis: moved   (only when role is indexed and no hosted spec depends on it)
+# index_basis: dependency | moved   (required when role is indexed)
 # index_reason: the one-line explanation, required with index_basis
 ---
 
