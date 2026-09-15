@@ -28,6 +28,6 @@ Intake issues carry a `type` label so the incoming queue can be filtered by what
 
 ## Review
 
-Every spec needs a named editor before it is merged, and that person stays accountable for the text.
+Every spec needs a named editor before it is merged, and that person stays accountable for the entry.
 
 Promotion to `review` and to `stable` needs a reviewer other than the editor. Editorial changes, typo fixes and clarifications need one approval from anyone with write access.

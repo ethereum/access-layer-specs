@@ -1,6 +1,6 @@
 # Front matter
 
-Each spec is a `README.md` inside its own numbered folder, and begins with a YAML block. That block is the single source of truth for the spec's metadata. The index tables and `registry.yaml` are generated from it, so nothing is maintained twice.
+Each spec is a `README.md` inside its own folder under `specs/`, named number plus slug, for example `specs/6-private-read/`. The file begins with a YAML block. That block is the single source of truth for the spec's metadata. The index table in the README and `registry.yaml` are generated from it, so nothing is maintained twice. Until the generator lands, the README table is edited by hand to match.
 
 ```yaml
 ---
@@ -11,7 +11,7 @@ role: hosted
 type: protocol
 status: draft
 domains: [read]
-tags: [read, privacy]
+tags: [privacy, rpc]
 editor: Name <email>
 contributors:
   - Name <email>
@@ -34,7 +34,7 @@ upstream: null
 | `status` | yes | See [lifecycle.md](lifecycle.md) |
 | `domains` | no | Any of `read`, `write`, `prove`, `delegate`, `exit` |
 | `tags` | no | Free-form keywords for search. Carries no process meaning |
-| `editor` | yes | The person accountable for the text |
+| `editor` | yes | The person accountable for this entry. For an indexed stub that means the link and the context line, not the upstream text |
 | `contributors` | no | Everyone else who wrote part of it |
 | `depends_on` | no | Spec ids this one cannot be understood or used without |
 | `replaces` | no | Spec ids this one supersedes |
@@ -56,7 +56,7 @@ An indexed entry has to earn its place, or the repository slowly becomes a catal
 | How it qualifies | When it applies | Checked |
 |---|---|---|
 | A hosted spec names it in `depends_on` | the usual case for an external standard | the dependency must exist |
-| `index_basis: graduated` | it moved out to another standards body | `replaced_by` must be set |
+| `index_basis: graduated` | it moved out to another standards body | `upstream` must be set |
 | `index_basis: formerly-hosted` | its text was hosted here and moved to another repository | `upstream` must be set |
 
 Whenever `index_basis` is used, `index_reason` must give the one-line human explanation alongside it. No other `index_basis` value is accepted, and there is deliberately no free-text route in. "This looks useful" is not a basis.
@@ -83,7 +83,7 @@ The tags exist to group specs and to help find the right reviewer. They do not a
 
 ## shortname
 
-Specs in this repository have long been cited in the form `1/COSS` and `3/SEMAPHORE-V4`, and several spec bodies already reference each other that way. `shortname` keeps that handle available and makes the folder slug derivable from it. It is optional, and a spec without one is cited by number and title.
+Specs in this repository have long been cited in the form `1/COSS` and `3/SEMAPHORE-V4`, and specs 2, 3 and 4 each cite `1/COSS` that way in their change-process section. `shortname` keeps that handle available and makes the folder slug derivable from it. It is optional, and a spec without one is cited by number and title.
 
 ## replaced_by
 
@@ -93,7 +93,7 @@ Three forms are accepted, and the validator treats each differently.
 |---|---|---|
 | A spec number | `4` | yes, the spec must exist here |
 | An external identifier | `ERC-9999` | no, it is outside this repository |
-| A path in this repository | `process/` | no, but it must resolve |
+| A path in this repository | `process/` | no, the reviewer confirms it opens |
 
 `replaces` points the other way and only takes spec numbers.
 
@@ -101,4 +101,4 @@ Three forms are accepted, and the validator treats each differently.
 
 A clarifying edit changes the spec in place.
 
-A behavior change is a new numbered spec. Semaphore v4 to v5 is the example to have in mind. The old spec flips to `status: deprecated` and gets `replaced_by` pointing at the new number, and the new spec carries `replaces`. Permalinks to the old text keep working, and anyone who built against v4 can still read exactly what they built against.
+A behavior change is a new numbered spec. Semaphore v3 to v4 is the example to have in mind, v4 replaced the Merkle tree and changed the identity scheme, so code written against v3 stopped working. The old spec flips to `status: deprecated` and gets `replaced_by` pointing at the new number, and the new spec carries `replaces`. Permalinks to the old text keep working, and anyone who built against v3 can still read exactly what they built against.

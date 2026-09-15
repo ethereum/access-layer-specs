@@ -10,7 +10,7 @@ Copyright and related rights waived via [CC0](../../LICENSE).
 
 and that line is the whole contributor agreement. Whoever submits text gives up their rights to it in the same pull request, so there is nothing to sign and nothing to retrofit. It also means a spec that graduates into an ERC needs no relicensing, because the ERC process requires CC0 as well.
 
-The repository carried MIT from its time as `zkspecs`. Specs 2 to 5 already ended with the CC0 waiver, so the switch changes the repository file to match the specs, not the other way round. Spec 1 is the one exception, it kept the GPL licence of the C4 process it was derived from.
+The repository carried MIT from its time as `zkspecs`. Specs 2 to 4 already end with the CC0 waiver, linking creativecommons.org rather than the repository file, and either target is fine. Spec 5 is a stub pointing upstream and carries no waiver. The switch changes the repository file to match the specs, not the other way round. Spec 1 is the one exception, it kept the GPL licence of the C4 process it was derived from.
 
 CC0 covers copyright only. It gives implementers no promise about patents, and the EIP process lives with the same gap.
 
