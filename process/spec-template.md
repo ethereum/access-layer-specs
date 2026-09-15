@@ -20,8 +20,7 @@ depends_on: []
 replaces: []
 replaced_by: null
 upstream: null
-# index_basis: graduated | formerly-hosted   (only when role is indexed
-#                and no hosted spec depends on it)
+# index_basis: moved   (only when role is indexed and no hosted spec depends on it)
 # index_reason: the one-line explanation, required with index_basis
 ---
 
