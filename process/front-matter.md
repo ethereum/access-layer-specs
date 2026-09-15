@@ -39,8 +39,7 @@ upstream: null
 | `depends_on` | no | Spec ids this one cannot be understood or used without |
 | `replaces` | no | Spec ids this one supersedes |
 | `replaced_by` | no | What supersedes this spec. See below for the accepted forms |
-| `index_basis` | when `role` is `indexed` | `dependency` or `moved`, the reason this entry exists |
-| `index_reason` | with `index_basis` | One line on why this entry exists |
+| `index_reason` | when `role` is `indexed` | `dependency` or `moved`, why this entry exists |
 | `upstream` | when `role` is `mirrored` or `indexed` | URL of the canonical text |
 
 ## role
@@ -51,14 +50,14 @@ Where the canonical text lives, and what this repository promises about it.
 - `mirrored`, a full copy is kept here while an upstream stays authoritative. Used for fragile upstreams such as shared notes and papers, and for frozen audit snapshots.
 - `indexed`, the spec is read upstream. Usually a short stub with a link and a sentence of context. A spec that was hosted here and moved out keeps its full text if any spec here depends on it or it had reached `stable`, so that old links still resolve. Otherwise it becomes a stub.
 
-An indexed entry has to earn its place, or the repository slowly becomes a catalogue of every interesting spec in the world. There are exactly two reasons, every indexed entry names its reason in `index_basis`, and CI checks the matching condition.
+An indexed entry has to earn its place, or the repository slowly becomes a catalogue of every interesting spec in the world. There are exactly two reasons, every indexed entry names its reason in `index_reason`, and CI checks the matching condition.
 
 | How it qualifies | When it applies | Checked |
 |---|---|---|
-| `index_basis: dependency` | the usual case for an external standard | a hosted spec lists it in `depends_on` |
-| `index_basis: moved` | its text was hosted here and now lives in another standards body or repository | `upstream` must be set |
+| `index_reason: dependency` | the usual case for an external standard | a hosted spec lists it in `depends_on` |
+| `index_reason: moved` | its text was hosted here and now lives in another standards body or repository | `upstream` must be set |
 
-`index_reason` gives the one-line human explanation alongside it, for a dependency that is which spec needs it and for what. No other `index_basis` value is accepted, and there is deliberately no free-text route in. "This looks useful" is not a basis.
+No other value is accepted, and there is deliberately no free-text route in. "This looks useful" is not a reason. Any further context goes in the stub's one sentence.
 
 Anything merely worth mentioning stays an ordinary hyperlink in a spec's prose.
 
