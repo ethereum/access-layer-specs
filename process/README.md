@@ -8,7 +8,7 @@ The rules for writing, reviewing and numbering specs here. EIP-1 does the same j
 | [front-matter.md](front-matter.md) | The metadata every spec carries, and the allowed values |
 | [intake.md](intake.md) | How a new spec gets proposed, numbered and merged |
 | [spec-template.md](spec-template.md) | The skeleton to copy when writing one |
-| [governance.md](governance.md) | The CC0 licence, plus the approval rule still to settle |
+| [governance.md](governance.md) | The CC0 licence, and where the approval rule lives |
 
 ## What belongs here
 
@@ -17,13 +17,13 @@ This repository holds specs for the Access Layer, meaning the paths through whic
 It hosts two kinds of document of its own.
 
 - Original specs, for work that has no standards home anywhere. A private-read protocol or a verifiable RPC receipt has no existing body to take it.
-- Profiles, which say how existing external standards are combined for one use case. No single external body writes these, because they span several.
+- Profiles, which say how existing standards work together for one use case. Each standard has its own home, W3C for credentials, the ERC process for wallets, but the combination has none, so it is written here.
 
-Everything else is an indexed link to a spec that lives elsewhere.
+Specs that live elsewhere get an entry here only when a spec here depends on them, or when their text started here and moved out. Anything else is a plain link in the prose of the spec that mentions it, see [front-matter.md](front-matter.md).
 
 ## What does not belong here
 
-Work owned by another standards body goes to that body, and this repository indexes it. A change to the credential format itself belongs in W3C. A change to anonymous routing may belong in the Tor spec process. A proposal that genuinely needs every wallet or client to implement it belongs in the [EIP process](https://eips.ethereum.org).
+Changes to a standard someone else already owns. A change to the W3C credential format belongs in W3C, a change to anonymous routing belongs in the Tor spec process, and a change to an existing ERC belongs in the [ERC process](https://eips.ethereum.org/erc). A new spec that already needs every wallet or client to implement it also starts as an ERC. One that grows into that later moves there, see below.
 
 This repository does not list tools, libraries or implementations, and does not link outward to them. Tools go stale and specs should not. A tool that implements a spec links to the spec, never the other way around.
 
@@ -31,18 +31,16 @@ This repository does not list tools, libraries or implementations, and does not 
 
 ```mermaid
 flowchart TD
-    A[New spec proposal] --> B{Owned by another body?<br>W3C, Tor, IETF}
-    B -- yes --> C[File it there<br>This repo indexes a link]
-    B -- no --> D{Needs everyone now?<br>Ecosystem-wide adoption}
-    D -- yes --> E[ERC process<br>This repo keeps a pointer]
-    D -- no --> F{Combines other standards?<br>Spans several bodies}
-    F -- yes --> G[Write a profile here]
-    F -- no --> H[Host the spec here<br>Draft, graduate if needed]
+    A[New spec proposal] --> B{Is it about the Access Layer?<br>read, write, prove, delegate or exit}
+    B -- no --> C[Not here]
+    B -- yes --> D{Does it change a standard<br>someone else already owns?<br>a W3C format, the Tor spec, an existing ERC}
+    D -- yes --> E[File it with that body]
+    D -- no --> F[Write it here]
 
     classDef elsewhere fill:#fdecea,stroke:#c0392b,color:#000
     classDef here fill:#e8f5f0,stroke:#1e8e6e,color:#000
     class C,E elsewhere
-    class G,H here
+    class F here
 ```
 
-The test in the second question is not whether something touches interoperability. It is whether it needs everyone to implement it yet. Work that is still taking shape can incubate here as a draft and graduate later.
+This repository is the default home for Access Layer specs, not the last resort. A spec starts here as a draft. If it later turns out that every wallet or client has to implement it, it moves to the ERC process and keeps an entry here with `index_reason: moved`. If it turns out to belong to W3C, IETF or the Tor project, the same. The door is open, the exits come later.
