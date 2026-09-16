@@ -2,13 +2,15 @@
 
 Every spec carries a `status`. Five main stages run in order, and three side statuses sit outside that order.
 
+A spec is merged into `main` early, as soon as it is readable and in scope. That merge gives it its number and puts it at `draft`. Everything after that, `review`, `stable`, `deprecated`, is a change to the `status` line of an already merged spec, made in a later pull request. So `draft` does not mean unmerged, it means merged and still being argued about. Only `idea` happens before the merge, in the intake issue.
+
 ## Main stages
 
 | Status | Means | Entry condition |
 |---|---|---|
 | `idea` | The shape of a spec exists, the detail does not | An editor accepted the intake issue |
 | `draft` | Written well enough to read and argue with | Merged as a numbered spec |
-| `review` | The author considers it complete and wants scrutiny | Author requests it, reviewers are assigned |
+| `review` | The author considers it complete and wants scrutiny | The editor asks for it in a pull request |
 | `stable` | Safe to build against, changes only for clarification | Evidence gate below is met |
 | `deprecated` | Superseded or retired, kept so links keep working | `replaced_by` is set, or a retirement note is added |
 
@@ -33,6 +35,6 @@ This is the gate W3C and IETF both use. It is the difference between a document 
 
 ## Movement between stages
 
-Anyone can propose a status change in a pull request. Promotion to `review` and `stable` needs a reviewer's approval, the rest are editorial.
+Anyone can propose a status change in a pull request. Moving to `review` or `stable` needs one approval from a maintainer who is not the spec's editor, the other moves are merged by any maintainer without a second approval. See [intake.md](intake.md).
 
 A spec that moves out, to another standards body or another repository, keeps its folder and number. Its `role` flips to `indexed`, its `upstream` points at the new canonical text, and it gains `index_reason: moved`. If any spec here depends on it or it had reached `stable`, the old text stays in place so that existing links and `depends_on` references keep resolving. Otherwise a stub with the link is enough.

@@ -90,8 +90,8 @@ What took this spec's place once it is deprecated. Three kinds of thing can.
 | What replaced it | Example | Checked by CI |
 |---|---|---|
 | A newer spec here | `4` | yes, a spec with that number must exist in `specs/` |
-| A standard somewhere else, when a spec here is dropped because it covers the same ground | `ERC-9999` | no, the reviewer confirms it |
-| A folder in this repository | `process/` | no, the reviewer confirms it opens |
+| A standard somewhere else, when a spec here is dropped because it covers the same ground | `ERC-9999` | no, a maintainer confirms it |
+| A folder in this repository | `process/` | no, a maintainer confirms it opens |
 
 The last form exists for one case, 1/COSS is retired by the process documents.
 

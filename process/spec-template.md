@@ -1,6 +1,6 @@
 # Spec template
 
-Copy this into `specs/0000-your-slug/README.md` and fill it in. Leave `id` and the folder number at `0000` until the spec is merged.
+Copy this into `specs/0000-shortname/README.md`, with your shortname in lowercase, and fill it in. Leave `id` and the folder number at `0000` until the spec is merged.
 
 Delete any section that genuinely does not apply, and say why in the pull request.
 
@@ -72,6 +72,6 @@ Copyright and related rights waived via [CC0](../../LICENSE).
 
 ## Fixtures
 
-Conformance test vectors live next to the spec, in `specs/0000-your-slug/fixtures/`. Name them for what they assert, for example `valid-receipt.json` and `invalid-missing-proof.json`.
+Conformance test vectors live next to the spec, in `specs/0000-shortname/fixtures/`. Name them for what they assert, for example `valid-receipt.json` and `invalid-missing-proof.json`.
 
 A spec needs fixtures, or two interoperating implementations, before it can reach `stable`. Starting them at `draft` is much easier than retrofitting them later.
