@@ -20,7 +20,7 @@ Start with [process/](process/README.md) to see how the repository works and whe
 
 ## Why these live in their own repository
 
-- Canonical rules are long-lived, while guidance, primitive mappings and tooling information change constantly. Keeping them apart stops one from churning the other.
+- Specs change slowly. The guides and tool lists around them change weekly. Kept together, every small update to a guide would show up as a change to the specs.
 - Specs need a stricter review, approval and versioning process than the material around them.
 
 ## Scope
@@ -28,16 +28,6 @@ Start with [process/](process/README.md) to see how the repository works and whe
 Every spec here is `hosted`, `mirrored` or `indexed`, and carries a `type` and a lifecycle `status`. The [front matter reference](process/front-matter.md) defines all three, and [lifecycle.md](process/lifecycle.md) defines what each status promises.
 
 Specs may be tagged with the Access Layer verbs they serve, any of `read`, `write`, `prove`, `delegate` and `exit`. A spec routinely serves several. Semaphore covers reading a leaf position, writing an identity into a group, and proving membership, so it carries all three of those tags rather than being filed under one.
-
-## Access Layer Spec Map
-
-Spec and spec-like work that currently lives elsewhere and may move here over time.
-
-| Area | Work | Location | Context here | Notes |
-|------|------|----------|--------------|-------|
-| Personhood | ZK Proof of Personhood | [`ethereum/zkID/specs/2-zk-proof-of-personhood`](https://github.com/ethereum/zkID/blob/main/specs/2-zk-proof-of-personhood/README.md) | Indexed as [`5/ZK-PROOF-OF-PERSONHOOD`](specs/5/README.md) | Adjacent Access Layer spec work |
-| Credentials | OpenAC Core | [`ethereum/zkID/specs/1-openac`](https://github.com/ethereum/zkID/blob/main/specs/1-openac/README.md) | Drafted in [#21](https://github.com/ethereum/access-layer-specs/pull/21) and [#23](https://github.com/ethereum/access-layer-specs/pull/23) | Protocol material alongside implementation work |
-| Age verification | ZK Age Verification | [`ethereum/zkID/specs/3-zk-age-verification`](https://github.com/ethereum/zkID/blob/main/specs/3-zk-age-verification/README.md) | Drafted as `6/ZK-AGE-ELIGIBILITY` in [#19](https://github.com/ethereum/access-layer-specs/pull/19) | Adjacent Access Layer spec work |
 
 ## Contributing
 
