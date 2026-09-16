@@ -50,7 +50,7 @@ Where the canonical text lives, and what this repository promises about it.
 
 - `hosted`, the text lives here and this repository is its source of truth.
 - `mirrored`, a full copy is kept here while an upstream stays authoritative. Used for fragile upstreams such as shared notes and papers, and for frozen audit snapshots.
-- `indexed`, the spec is read upstream. Usually a short stub with a link and a sentence of context. A spec that was hosted here and moved out keeps its full text if any spec here depends on it or it had reached `stable`, so that old links still resolve. Otherwise it becomes a stub.
+- `indexed`, the spec is read upstream. Usually a short stub with a link and a sentence of context. A spec that was hosted here and moved out keeps its full text if any spec here depends on it or it had reached `stable`, so that old links still resolve. Otherwise it becomes a stub. A stub carries no `contributors`, because the text is not here, and its `editor` is whoever keeps the link and the context line correct rather than whoever wrote the upstream spec.
 
 An indexed entry has to earn its place, or the repository slowly becomes a catalogue of every interesting spec in the world. There are exactly two reasons, every indexed entry names its reason in `index_reason`, and CI checks the matching condition.
 
