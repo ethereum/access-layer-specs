@@ -57,9 +57,9 @@ An indexed entry has to earn its place, or the repository slowly becomes a catal
 | `index_reason: dependency` | the usual case for an external standard | a hosted spec lists it in `depends_on` |
 | `index_reason: moved` | its text was hosted here and now lives in another standards body or repository | `upstream` must be set |
 
-No other value is accepted, and there is deliberately no free-text route in. "This looks useful" is not a reason. Any further context goes in the stub's one sentence.
+The field takes only these two values, on purpose. A sentence of your own is not a reason, and "this looks useful" never gets a spec in.
 
-Anything merely worth mentioning stays an ordinary hyperlink in a spec's prose.
+A spec that is only worth mentioning gets a plain link in the text of the spec that mentions it, not an entry of its own. A dependency is something a spec cannot be used without. A comparison or a rejected alternative in the Rationale is a mention.
 
 ## type
 
