@@ -1,14 +1,13 @@
 # Lifecycle
 
-Every spec carries a `status`. Five main stages run in order, and three side statuses sit outside that order.
+Every spec carries a `status`. Four main stages run in order, and three side statuses sit outside that order.
 
-A spec is merged into `main` early, as soon as it is readable and in scope. That merge gives it its number and puts it at `draft`. Everything after that, `review`, `stable`, `deprecated`, is a change to the `status` line of an already merged spec, made in a later pull request. So `draft` does not mean unmerged, it means merged and still being argued about. Only `idea` happens before the merge, in the intake issue.
+A spec is merged into `main` early, as soon as it is readable and in scope. That merge gives it its number and puts it at `draft`. Everything after that, `review`, `stable`, `deprecated`, is a change to the `status` line of an already merged spec, made in a later pull request. So `draft` does not mean unmerged, it means merged and still being argued about. Before the merge there is no status, only the intake issue.
 
 ## Main stages
 
 | Status | Means | Entry condition |
 |---|---|---|
-| `idea` | The shape of a spec exists, the detail does not | An editor accepted the intake issue |
 | `draft` | Written well enough to read and argue with | Merged as a numbered spec |
 | `review` | The author considers it complete and wants scrutiny | The editor asks for it in a pull request |
 | `stable` | Safe to build against, changes only for clarification | Evidence gate below is met |

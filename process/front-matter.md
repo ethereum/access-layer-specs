@@ -6,6 +6,7 @@ Each spec is a `README.md` inside its own folder under `specs/`, named number pl
 ---
 id: 6
 title: Private Read Protocol
+description: Private reads from Ethereum without revealing what was read
 shortname: PRIVATE-READ
 role: hosted
 type: protocol
@@ -28,6 +29,7 @@ upstream: null
 |---|---|---|
 | `id` | yes | The spec's number. Assigned on merge, never reused, never changed |
 | `title` | yes | Plain name, no number in it |
+| `description` | no | One line for the index table. Falls back to `title` when absent |
 | `shortname` | yes | Upper-case short name, used for citations and the folder name. See below |
 | `role` | yes | `hosted`, `mirrored` or `indexed` |
 | `type` | yes | `protocol`, `interface`, `profile`, `schema` or `process` |

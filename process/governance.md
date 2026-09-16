@@ -16,6 +16,4 @@ CC0 covers copyright only. It gives implementers no promise about patents, and t
 
 ## Approval rule
 
-What counts as consensus for merging a spec, and for promoting one to `review` or `stable`. See [intake.md](intake.md) for the current working rule, which needs ratifying rather than inventing. If maintainers disagree, the repository owner decides.
-
-This is still open and tracked in [#29](https://github.com/ethereum/access-layer-specs/issues/29).
+What counts as consensus for merging a spec, and for promoting one to `review` or `stable`. See [intake.md](intake.md) for the current working rule, which needs ratifying rather than inventing.

@@ -1,6 +1,6 @@
 # Process
 
-How this repository works. These documents play the role EIP-1 plays for EIPs.
+The rules for writing, reviewing and numbering specs here. EIP-1 does the same job for EIPs.
 
 | Document | Covers |
 |---|---|

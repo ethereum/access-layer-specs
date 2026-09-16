@@ -8,6 +8,7 @@ Delete any section that genuinely does not apply, and say why in the pull reques
 ---
 id: 0000
 title: Your Spec Name
+description: One line, shown in the index table
 shortname: YOUR-SPEC
 role: hosted
 type: protocol
