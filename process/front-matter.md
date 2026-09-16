@@ -59,7 +59,7 @@ An indexed entry has to earn its place, or the repository slowly becomes a catal
 
 The field takes only these two values, on purpose. A sentence of your own is not a reason, and "this looks useful" never gets a spec in.
 
-A spec that is only worth mentioning gets a plain link in the text of the spec that mentions it, not an entry of its own. A dependency is something a spec cannot be used without. A comparison or a rejected alternative in the Rationale is a mention.
+A spec that is only worth mentioning gets a plain link in the text of the spec that mentions it, not an entry of its own. A dependency is something a spec cannot be used without. A comparison or a rejected alternative in the rationale section is a mention.
 
 ## type
 
