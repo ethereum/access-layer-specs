@@ -35,7 +35,7 @@ upstream: null
 | `type` | yes | `protocol`, `interface`, `profile`, `schema` or `process` |
 | `status` | yes | See [lifecycle.md](lifecycle.md) |
 | `domains` | no | Any of `read`, `write`, `prove`, `delegate`, `exit` |
-| `tags` | no | Free-form keywords for search. Carries no process meaning |
+| `tags` | no | Free-form keywords for search, lower case with hyphens instead of spaces. Carries no process meaning |
 | `editor` | yes | The person accountable for this entry. For an indexed stub that means the link and the context line, not the upstream text |
 | `contributors` | no | Everyone else who wrote part of it |
 | `depends_on` | no | Spec ids this one cannot be understood or used without |
