@@ -28,7 +28,7 @@ upstream: null
 |---|---|---|
 | `id` | yes | The spec's number. Assigned on merge, never reused, never changed |
 | `title` | yes | Plain name, no number in it |
-| `shortname` | no | Upper-case short handle, used in the `N/SHORTNAME` form other specs cite |
+| `shortname` | yes | Upper-case short name, used for citations and the folder name. See below |
 | `role` | yes | `hosted`, `mirrored` or `indexed` |
 | `type` | yes | `protocol`, `interface`, `profile`, `schema` or `process` |
 | `status` | yes | See [lifecycle.md](lifecycle.md) |
@@ -66,9 +66,9 @@ A spec that is only worth mentioning gets a plain link in the text of the spec t
 What kind of document it is.
 
 - `protocol`, the complete behavior of one system.
-- `interface`, an API or message format.
+- `interface`, an API or message format, a call and its answer. Proven by two implementations talking to each other.
 - `profile`, how existing standards are combined for one use case.
-- `schema`, an exact data shape that a validator can check against.
+- `schema`, an exact data shape written by one side and read by the other. Proven by fixtures a validator can pass or fail.
 - `process`, this repository's own working rules.
 
 New values get added when the first spec of a new kind arrives, not in advance. Conformance fixtures are not a type. They live in each spec's `fixtures/` folder.
@@ -81,22 +81,28 @@ The tags exist to group specs and to help find the right reviewer. They do not a
 
 ## shortname
 
-Specs in this repository have long been cited in the form `1/COSS` and `3/SEMAPHORE-V4`, and specs 2, 3 and 4 each cite `1/COSS` that way in their change-process section. `shortname` keeps that handle available and makes the folder slug derivable from it. It is optional, and a spec without one is cited by number and title.
+A short upper-case name for the spec, with no spaces, for example `SEMAPHORE-V4`. It is used in two places. Other specs cite this one as number slash shortname, `3/SEMAPHORE-V4`, which specs 2, 3 and 4 already do for `1/COSS`. And the folder name is the number plus the shortname in lowercase, `specs/3-semaphore-v4/`. CI checks that the folder matches.
 
 ## replaced_by
 
-Three forms are accepted, and the validator treats each differently.
+What took this spec's place once it is deprecated. Three kinds of thing can.
 
-| Form | Example | Checked |
+| What replaced it | Example | Checked by CI |
 |---|---|---|
-| A spec number | `4` | yes, the spec must exist here |
-| An external identifier | `ERC-9999` | no, it is outside this repository |
-| A path in this repository | `process/` | no, the reviewer confirms it opens |
+| A newer spec here | `4` | yes, a spec with that number must exist in `specs/` |
+| A standard somewhere else, when a spec here is dropped because it covers the same ground | `ERC-9999` | no, the reviewer confirms it |
+| A folder in this repository | `process/` | no, the reviewer confirms it opens |
 
-`replaces` points the other way and only takes spec numbers.
+The last form exists for one case, 1/COSS is retired by the process documents.
+
+Replaced is not the same as moved. A replaced spec is no longer maintained, its `status` becomes `deprecated`, its `role` stays `hosted` and its text stays as a record, and `replaced_by` points at whatever made it pointless. A moved spec is still maintained, only somewhere else, so its `role` becomes `indexed` with `index_reason: moved` and `upstream` points at the new home, while `status` stays what it was.
+
+`replaces` is the matching field on the newer spec. It lists the number of the older spec here that it takes over from, so the two specs point at each other. It only ever holds spec numbers from this repository.
 
 ## Versioning
 
-A clarifying edit changes the spec in place.
+There are two kinds of change to a spec, and they are handled differently.
 
-A behavior change is a new numbered spec. Semaphore v3 to v4 is the example to have in mind, v4 replaced the Merkle tree and changed the identity scheme, so code written against v3 stopped working. The old spec flips to `status: deprecated` and gets `replaced_by` pointing at the new number, and the new spec carries `replaces`. Permalinks to the old text keep working, and anyone who built against v3 can still read exactly what they built against.
+A change that only makes the text clearer, a fixed typo, a better example, a tighter definition, is edited into the existing spec. Nothing else happens.
+
+A change that alters what implementers have to do gets a new spec with a new number. Semaphore v3 to v4 is the kind of change meant here. v4 swapped the Merkle tree for the Lean IMT and moved identities from Poseidon to EdDSA, so code written for v3 no longer works with v4. Had v3 been a spec here, it would get `status: deprecated` and `replaced_by` pointing at the v4 number, and the v4 spec would carry `replaces` with the v3 number. The v3 text stays where it is, so anyone who built against it can still read exactly what they built against.
