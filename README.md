@@ -12,7 +12,7 @@ Start with [process/](process/README.md) to see how the repository works and whe
 
 | # | Name | Type | Status | Domains | Description |
 |---|------|------|--------|---------|-------------|
-| 1 | [1/COSS](specs/1-coss/README.md) | process | living | — | Specification framework and editorial process |
+| 1 | [1/COSS](specs/1-coss/README.md) | process | deprecated | — | Specification framework and editorial process, superseded by process/ |
 | 2 | [2/ANON-AADHAAR-V2](specs/2-anon-aadhaar-v2/README.md) | protocol | draft | prove | Privacy-preserving verification of Aadhaar identity cards using ZK proofs |
 | 3 | [3/SEMAPHORE-V4](specs/3-semaphore-v4/README.md) | protocol | draft | read, write, prove | Anonymous group membership and signaling protocol |
 | 4 | [4/EXCUBIAE](specs/4-excubiae/README.md) | protocol | draft | prove, delegate | Composable attribute-based access control framework for EVM |
