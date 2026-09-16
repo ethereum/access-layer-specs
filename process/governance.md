@@ -8,7 +8,7 @@ Everything in this repository is placed in the public domain under [CC0](../LICE
 Copyright and related rights waived via [CC0](../../LICENSE).
 ```
 
-and that line is the whole contributor agreement. Whoever submits text gives up their rights to it in the same pull request, so there is nothing to sign and nothing to retrofit. It also means a spec that graduates into an ERC needs no relicensing, because the ERC process requires CC0 as well.
+and that line is the whole contributor agreement. Whoever submits text gives up their rights to it in the same pull request, so there is nothing to sign and nothing to retrofit.
 
 The repository carried MIT from its time as `zkspecs`. Specs 2 to 4 already end with the CC0 waiver, linking creativecommons.org rather than the repository file, and either target is fine. Spec 5 is a stub pointing upstream and carries no waiver. The switch changes the repository file to match the specs, not the other way round. Spec 1 is the one exception, it kept the GPL licence of the ZeroMQ COSS text it was copied from.
 

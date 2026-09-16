@@ -12,7 +12,7 @@ The rules for writing, reviewing and numbering specs here. EIP-1 does the same j
 
 ## What belongs here
 
-This repository holds specs for the Access Layer, meaning the paths through which people and their agents read from Ethereum, write to it, prove things about themselves, delegate authority, and exit when a provider fails.
+This repository holds specs for the Access Layer, meaning the paths through which people and their agents read from Ethereum, write to it, prove things about themselves, delegate authority, and exit when a provider fails. A spec belongs here when it strengthens at least one of the Access Layer guarantees, censorship resistance, open source, privacy, security or self-sovereignty.
 
 It hosts two kinds of document of its own.
 
@@ -23,7 +23,7 @@ Specs that live elsewhere get an entry here only when a spec here depends on the
 
 ## What does not belong here
 
-Changes to a standard someone else already owns. A change to the W3C credential format belongs in W3C, a change to anonymous routing belongs in the Tor spec process, and a change to an existing ERC belongs in the [ERC process](https://eips.ethereum.org/erc). A new spec that already needs every wallet or client to implement it also starts as an ERC. One that grows into that later moves there, see below.
+Changes to a standard someone else already owns. A change to the W3C credential format belongs in W3C, a change to anonymous routing belongs in the Tor spec process, and a change to an existing ERC belongs in the [ERC process](https://eips.ethereum.org/erc). A new spec that already needs every wallet or client to implement it also starts as an ERC.
 
 This repository does not list tools, libraries or implementations, and does not link outward to them. Tools go stale and specs should not. A tool that implements a spec links to the spec, never the other way around.
 
@@ -31,7 +31,7 @@ This repository does not list tools, libraries or implementations, and does not 
 
 ```mermaid
 flowchart TD
-    A[New spec proposal] --> B{Is it about the Access Layer?<br>read, write, prove, delegate or exit}
+    A[New spec proposal] --> B{Is it about the Access Layer?<br>read, write, prove, delegate or exit,<br>serving censorship resistance, open source, privacy, security or self-sovereignty}
     B -- no --> C[Not here]
     B -- yes --> D{Does it change a standard<br>someone else already owns?<br>a W3C format, the Tor spec, an existing ERC}
     D -- yes --> E[File it with that body]
@@ -43,4 +43,4 @@ flowchart TD
     class F here
 ```
 
-This repository is the default home for Access Layer specs, not the last resort. A spec starts here as a draft. If it later turns out that every wallet or client has to implement it, it moves to the ERC process and keeps an entry here with `index_reason: moved`. If it turns out to belong to W3C, IETF or the Tor project, the same. The door is open, the exits come later.
+This repository is the home for Access Layer specs. If a spec ever moves to another body later, it keeps its number and a pointer here, see [lifecycle.md](lifecycle.md).
