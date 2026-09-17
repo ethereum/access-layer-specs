@@ -5,8 +5,8 @@
 1. Open an issue describing what the spec would cover and which Access Layer verbs it serves. Label it `intake` and add the `type` label you expect it to carry.
 2. A maintainer confirms it belongs here, using the decision tree in [README.md](README.md). If it belongs to W3C, the Tor process or the ERC process, the editor writes that in the issue, names where to file it instead, and closes the issue.
 3. Write the spec by copying [spec-template.md](spec-template.md) into `specs/0000-shortname/README.md`, where `shortname` is the spec's shortname in lowercase, for example `specs/0000-private-read/`.
-4. Open a pull request. Leave the number at `0000` while it is in review.
-5. On merge, a maintainer renames the folder and sets `id` to the assigned number. The spec starts at `status: draft`. Moving on to `review` and `stable` happens later, in further pull requests, see [lifecycle.md](lifecycle.md).
+4. Open a pull request. Leave the number at `0000` while it is in review. If the spec depends on an external standard that has no entry here yet, add that standard as an `indexed` entry in the same pull request, and list it in `depends_on` as `0` until merge.
+5. On merge, a maintainer renames the folder, sets `id` to the assigned number, replaces any `0` in `depends_on`, `replaces` or `replaced_by` with the assigned numbers, and runs `scripts/build_registry.py`, which adds the spec to the index. A spec still at `0000` is validated by CI but not listed. The spec starts at `status: draft`. Moving on to `review` and `stable` happens later, in further pull requests, see [lifecycle.md](lifecycle.md).
 
 Small changes to an existing spec skip all of this. Open a pull request.
 

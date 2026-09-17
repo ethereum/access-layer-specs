@@ -1,6 +1,6 @@
 # Front matter
 
-Each spec is a `README.md` inside its own folder under `specs/`, named number plus the spec's shortname in lowercase, for example `specs/6-private-read/`. The file begins with a YAML block. That block is the single source of truth for the spec's metadata. The index table in the README and `registry.yaml` are generated from it, so nothing is maintained twice. Until the generator lands, the README table is edited by hand to match.
+Each spec is a `README.md` inside its own folder under `specs/`, named number plus the spec's shortname in lowercase, for example `specs/6-private-read/`. The file begins with a YAML block. That block is the single source of truth for the spec's metadata. The index table in the README and `registry.yaml` are generated from it, so nothing is maintained twice.
 
 ```yaml
 ---
