@@ -24,8 +24,8 @@ It hosts two kinds of document of its own.
 Every spec carries a `role` saying where its text lives. Pick one.
 
 - Write it here, `role: hosted`. The text lives in this repository and this repository is its source of truth. This is the default, for original specs and for profiles. Follow [intake.md](intake.md).
-- Copy it here, `role: mirrored`. A full copy is kept while an upstream stays authoritative. Only for fragile upstreams, shared notes, papers, or a frozen audit snapshot. Set `upstream`.
-- Point at it, `role: indexed`. A stub with a link and one line of context. Allowed for exactly two reasons, `index_reason: dependency` when a hosted spec lists it in `depends_on`, and `index_reason: moved` when its text started here and left. Set `upstream`.
+- Copy it here, `role: mirrored`. A full copy is kept while an upstream stays authoritative. Only for fragile upstreams, shared notes, papers, or a frozen audit snapshot. Set `upstream` to the URL of the spec's current home.
+- Point at it, `role: indexed`. For external dependencies, create a stub with a link and one line of context. For moved specs, keep the full original text and add a clear notice linking to its new home. An indexed entry is allowed for exactly two reasons, `index_reason: dependency` when a hosted spec lists it in `depends_on`, and `index_reason: moved` when its text started here and left. Set `upstream` to the URL of the spec's current home.
 
 A spec that is only worth mentioning gets a plain link in the prose of the spec that mentions it, not an entry. The fields are defined in [front-matter.md](front-matter.md).
 

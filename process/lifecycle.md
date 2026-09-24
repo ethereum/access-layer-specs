@@ -36,4 +36,4 @@ This is the gate W3C and IETF both use. It is the difference between a document 
 
 Anyone can propose a status change in a pull request. Moving to `review` or `stable` needs one approval from a maintainer who is not the spec's editor, the other moves are merged by any maintainer without a second approval. See [intake.md](intake.md).
 
-A spec that moves out, to another standards body or another repository, keeps its folder and number. Its `role` flips to `indexed`, its `upstream` points at the new canonical text, and it gains `index_reason: moved`. If any spec here depends on it or it had reached `stable`, the old text stays in place so that existing links and `depends_on` references keep resolving. Otherwise a stub with the link is enough.
+A spec that moves out, to another standards body or another repository, keeps its folder and number. Its `role` flips to `indexed`, its `upstream` points at the new canonical text, and it gains `index_reason: moved`. The full text stays in place, with a clear notice linking to the new canonical text, so existing links and references keep working.
