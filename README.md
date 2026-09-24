@@ -29,7 +29,7 @@ Generated from each spec's front matter by `scripts/build_registry.py`. Edit the
 
 ## Scope
 
-Every spec here is `hosted`, `mirrored` or `indexed`, and carries a `type` and a lifecycle `status`. The [front matter reference](process/front-matter.md) defines all three, and [lifecycle.md](process/lifecycle.md) defines what each status promises.
+Every spec here is `hosted`, `mirrored` or `indexed`, and carries a `type` and a lifecycle `status`. The [process README](process/README.md#three-ways-a-spec-gets-an-entry) says when to use each of the three, the [front matter reference](process/front-matter.md) defines all three, and [lifecycle.md](process/lifecycle.md) defines what each status promises.
 
 Specs may be tagged with the Access Layer verbs they serve, any of `read`, `write`, `prove`, `delegate` and `exit`. A spec routinely serves several. Semaphore covers reading a leaf position, writing an identity into a group, and proving membership, so it carries all three of those tags rather than being filed under one.
 
