@@ -19,7 +19,17 @@ It hosts two kinds of document of its own.
 - Original specs, for work that has no standards home anywhere. A private-read protocol or a verifiable RPC receipt has no existing body to take it.
 - Profiles, which say how existing standards work together for one use case. Each standard has its own home, W3C for credentials, the ERC process for wallets, but the combination has none, so it is written here.
 
-Specs that live elsewhere get an entry here only when a spec here depends on them, or when their text started here and moved out. Anything else is a plain link in the prose of the spec that mentions it, see [front-matter.md](front-matter.md).
+## Three ways a spec gets an entry
+
+Every spec carries a `role` saying where its text lives. Pick one.
+
+- Write it here, `role: hosted`. The text lives in this repository and this repository is its source of truth. This is the default, for original specs and for profiles. Follow [intake.md](intake.md).
+- Copy it here, `role: mirrored`. A full copy is kept while an upstream stays authoritative. Only for fragile upstreams, shared notes, papers, or a frozen audit snapshot. Set `upstream`.
+- Point at it, `role: indexed`. A stub with a link and one line of context. Allowed for exactly two reasons, `index_reason: dependency` when a hosted spec lists it in `depends_on`, and `index_reason: moved` when its text started here and left. Set `upstream`.
+
+A spec that is only worth mentioning gets a plain link in the prose of the spec that mentions it, not an entry. The fields are defined in [front-matter.md](front-matter.md).
+
+Small changes to an existing spec need none of this. Open a pull request.
 
 ## What does not belong here
 
