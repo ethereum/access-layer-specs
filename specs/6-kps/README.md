@@ -1,5 +1,5 @@
 ---
-id: 0000
+id: 6
 title: Key Pinned Streams
 description: Authenticated multiplexed byte streams to a peer pinned by certificate hash, over WebRTC or QUIC
 shortname: KPS
@@ -23,4 +23,4 @@ A KPS endpoint is identified by a hash of its self-signed certificate rather tha
 
 On top of that identity the spec defines an encrypted, multiplexed connection carrying unnamed reliable ordered bidirectional byte streams, plus unreliable connection-level datagrams. Two transports are defined, WebRTC so a browser can dial, and QUIC for native peers, and which one carries a connection is hidden from the caller: the same peer can serve both. Message framing, routing and request/response semantics are left to whatever is layered on top.
 
-Pinning a peer by key rather than by name takes the certificate authority and the DNS root out of the path a client uses to reach anything at all, which is what earns the entry its own number here rather than a mention inside whatever is layered on top. [`0000-anon-rpc`](../0000-anon-rpc/README.md) is the first of those in this repository: its workers reach the network over KPS streams, and its harnesses fetch client bundles over them.
+Pinning a peer by key rather than by name takes the certificate authority and the DNS root out of the path a client uses to reach anything at all, which is what earns the entry its own number here rather than a mention inside whatever is layered on top. [7/ANON-RPC](../7-anon-rpc/README.md) is the first of those in this repository: its workers reach the network over KPS streams, and its harnesses fetch client bundles over them.

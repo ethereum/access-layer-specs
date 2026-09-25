@@ -20,6 +20,8 @@ Generated from each spec's front matter by `scripts/build_registry.py`. Edit the
 | 3 | [3/SEMAPHORE-V4](specs/3-semaphore-v4/README.md) | protocol | draft | read, write, prove | Anonymous group membership and signaling protocol |
 | 4 | [4/EXCUBIAE](specs/4-excubiae/README.md) | protocol | draft | prove, delegate | Composable attribute-based access control framework for EVM |
 | 5 | [5/ZK-PROOF-OF-PERSONHOOD](specs/5-zk-proof-of-personhood/README.md) | protocol | draft | prove | ZK-based proof of personhood for online forums, text currently in zkID |
+| 6 | [6/KPS](specs/6-kps/README.md) | protocol | draft | read, write | Authenticated multiplexed byte streams to a peer pinned by certificate hash, over WebRTC or QUIC |
+| 7 | [7/ANON-RPC](specs/7-anon-rpc/README.md) | interface | draft | read, write | Anonymized RPC by running hash-pinned client code in a sandboxed, capability-limited worker |
 <!-- END GENERATED SPEC TABLE -->
 
 ## Why these live in their own repository

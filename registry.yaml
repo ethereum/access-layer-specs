@@ -82,3 +82,45 @@ specs:
   editor: phipsae
   upstream: https://github.com/ethereum/zkID/blob/main/specs/2-zk-proof-of-personhood/README.md
   index_reason: moved
+- id: 6
+  title: Key Pinned Streams
+  path: specs/6-kps/README.md
+  role: indexed
+  type: protocol
+  status: draft
+  shortname: KPS
+  domains:
+  - read
+  - write
+  tags:
+  - transport
+  - key-pinning
+  - streams
+  - datagrams
+  - webrtc
+  - quic
+  editor: Andrew Morris <andrew.morris@ethereum.org>
+  upstream: https://github.com/ethereum/kps/blob/main/SPEC.md
+  index_reason: moved
+- id: 7
+  title: Anonymized RPC
+  path: specs/7-anon-rpc/README.md
+  role: indexed
+  type: interface
+  status: draft
+  shortname: ANON-RPC
+  domains:
+  - read
+  - write
+  tags:
+  - privacy
+  - rpc
+  - anonymity
+  - sandboxing
+  - content-addressing
+  - wallet
+  editor: Andrew Morris <andrew.morris@ethereum.org>
+  depends_on:
+  - 6
+  upstream: https://github.com/ethereum/anon-rpc/blob/main/SPEC.md
+  index_reason: moved
