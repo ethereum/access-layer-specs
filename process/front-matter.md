@@ -34,6 +34,7 @@ upstream: null
 | `role` | yes | `hosted`, `mirrored` or `indexed` |
 | `type` | yes | `protocol`, `interface`, `profile`, `schema` or `process` |
 | `status` | yes | See [lifecycle.md](lifecycle.md) |
+| `version` | no | The spec's own version, for example `0.3.2`, used while it's a `draft`. A changelog can sit in the spec's folder |
 | `domains` | no | Any of `read`, `write`, `prove`, `delegate`, `exit` |
 | `tags` | no | Free-form keywords for search, lower case with hyphens instead of spaces. Carries no process meaning |
 | `editor` | yes | The person accountable for this entry. For an indexed stub that means the link and the context line, not the upstream text |
@@ -107,4 +108,4 @@ There are two kinds of change to a spec, and they are handled differently.
 
 A change that only makes the text clearer, a fixed typo, a better example, a tighter definition, is edited into the existing spec. Nothing else happens.
 
-A change that alters what implementers have to do gets a new spec with a new number. Semaphore v3 to v4 is the kind of change meant here. v4 swapped the Merkle tree for the Lean IMT and moved identities from Poseidon to EdDSA, so code written for v3 no longer works with v4. Had v3 been a spec here, it would get `status: deprecated` and `replaced_by` pointing at the v4 number, and the v4 spec would carry `replaces` with the v3 number. The v3 text stays where it is, so anyone who built against it can still read exactly what they built against.
+A change that alters what implementers have to do gets a new spec with a new number. This applies from `review` on. While a spec is in `draft`, every change is edited into the same spec and tracked with `version`. Semaphore v3 to v4 is the kind of change meant here. v4 swapped the Merkle tree for the Lean IMT and moved identities from Poseidon to EdDSA, so code written for v3 no longer works with v4. Had v3 been a spec here, it would get `status: deprecated` and `replaced_by` pointing at the v4 number, and the v4 spec would carry `replaces` with the v3 number. The v3 text stays where it is, so anyone who built against it can still read exactly what they built against.
