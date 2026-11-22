@@ -91,6 +91,13 @@ def load_specs():
             errors.append(f"{folder}: type {data.get('type')!r} is not one of {sorted(TYPES)}")
         if data.get("status") not in STATUSES:
             errors.append(f"{folder}: status {data.get('status')!r} is not one of {sorted(STATUSES)}")
+        # The checks below iterate these fields, so a scalar such as
+        # `depends_on: 3` would crash the script, and `domains: read` would be
+        # checked one character at a time.
+        for field in ("domains", "depends_on", "replaces"):
+            if data.get(field) is not None and not isinstance(data[field], list):
+                errors.append(f"{folder}: {field} must be a list, for example [{data[field]}]")
+                data[field] = []
         for domain in data.get("domains") or []:
             if domain not in DOMAINS:
                 errors.append(f"{folder}: domain {domain!r} is not one of {sorted(DOMAINS)}")
@@ -104,7 +111,7 @@ def load_specs():
     # merge, see process/intake.md. It goes through every check below like the
     # others but is kept out of registry.yaml and the README table until then.
     specs = [e for e in entries
-             if isinstance(e["id"], int) and not isinstance(e["id"], bool) and e["id"] != 0]
+             if isinstance(e.get("id"), int) and not isinstance(e.get("id"), bool) and e.get("id") != 0]
 
     ids = [s["id"] for s in specs]
     for spec_id in sorted({i for i in ids if ids.count(i) > 1}):
@@ -115,7 +122,7 @@ def load_specs():
     # request", so a new spec can depend on an external standard proposed next
     # to it. On merge the maintainer swaps 0 for the assigned number, and once
     # no 0000 folder is left a leftover 0 fails like any other missing spec.
-    if any(e["id"] == 0 for e in entries):
+    if any(e.get("id") == 0 for e in entries):
         known.add(0)
     for spec in entries:
         for field in ("depends_on", "replaces"):
@@ -147,7 +154,8 @@ def load_specs():
                 f"{spec['folder']}: an indexed entry needs index_reason set to one of "
                 f"{sorted(INDEX_REASONS)}, see process/front-matter.md")
             continue
-        if reason == "dependency" and spec["id"] not in depended_on:
+        # A missing or malformed id is already reported above.
+        if reason == "dependency" and "id" in spec and spec["id"] not in depended_on:
             errors.append(
                 f"{spec['folder']}: index_reason dependency, but no hosted spec lists "
                 f"{spec['id']} in depends_on")
